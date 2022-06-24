@@ -1,15 +1,17 @@
 package br.com.app.domain.service
 
+import ClientRepository
 import br.com.app.domain.model.Client
+import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.stereotype.Repository
 import org.springframework.stereotype.Service
 import java.util.*
 
 @Service
-class ClientService {
+class ClientService (private val repository: ClientRepository) {
 
     fun findAll(): List<Client> {
         var client = Client(
-            id = 1,
             name = "Gabriel",
             document = "11122255588",
             contact = "48988887788",
@@ -21,7 +23,6 @@ class ClientService {
 
     fun findById(id: Long): Client {
         return Client(
-            id = 1,
             name = "Gabriel",
             document = "11122255588",
             contact = "48988887788",
@@ -39,8 +40,8 @@ class ClientService {
     }
 
     fun save(client: Client): Client {
+        repository.save(client);
         return Client(
-            id = 1,
             name = "Gabriel",
             document = "11122255588",
             contact = "48988887788",

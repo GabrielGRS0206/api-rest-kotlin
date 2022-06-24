@@ -4,13 +4,14 @@ import br.com.app.api.mapper.ClientMapper
 import br.com.app.api.mapper.dto.ClientRequestDTO
 import br.com.app.api.mapper.dto.ClientResponseDTO
 import br.com.app.domain.service.ClientService
+import io.swagger.v3.oas.annotations.Operation
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 import org.springframework.web.util.UriComponentsBuilder
 import java.util.stream.Collectors
 
 @RestController
-@RequestMapping("/api/clients")
+@RequestMapping("/clients")
 class ClientController(private val service: ClientService, private val mapper: ClientMapper) {
 
     @GetMapping
