@@ -4,9 +4,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 
 @SpringBootApplication
-class CalcAppApplication
+class AppApplication
 
 fun main(args: Array<String>) {
-	runApplication<CalcAppApplication>(*args)
+	runApplication<AppApplication>(*args)
 	println("Iniciando com Kotlin.")
 }
